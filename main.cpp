@@ -25,7 +25,7 @@ bool istraversable(Vertex v1, Vertex v2, Edge* edges, int edges_length){
                 Vertex _v1 = Vertex(edges[j].v1.name);
                 Vertex _v2 = Vertex(edges[j].v2.name);
                 
-                other_edges[dest_index++] = Edge(Vertex(edges[j].v1.name), Vertex(edges[j].v2.name));
+                other_edges[dest_index++] = Edge(_v1, _v2);
             }
         }
 
