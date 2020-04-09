@@ -1,34 +1,10 @@
 #include <iostream>
 #include <string>
+
+#include "Vertex/Vertex.hpp"
+#include "Edge/Edge.hpp"
+
 using namespace std;
-
-class Vertex{
-public:
-    string name = "";
-    
-    Vertex(string n = ""){
-        name = n;
-    }
-    
-    bool operator==(const Vertex& otherVertex){
-        return name == otherVertex.name;
-    }
-};
-
-class Edge{
-public:
-    Vertex v1 = Vertex("");
-    Vertex v2 = Vertex("");
-    
-    Edge(Vertex _v1 = Vertex(""), Vertex _v2 = Vertex("")){
-        v1 = _v1;
-        v2 = _v2;
-    }
-    
-    string ToString(){
-        return v1.name + " <-> " + v2.name;
-    }
-};
 
 bool istraversable(Vertex v1, Vertex v2, Edge* edges, int edges_length){
 
