@@ -16,3 +16,4 @@ Will return the degree of the vertex, that being the total amount of edges conne
 
 ## Todo
 - Create a traversability method that returns the lowest amount of edges crossed such that vertex v1 can meet vertex v2. If a path is not found, the method shall return -1.
+- Add operator overloading for istraversable and degree for vector parameters of type Vector& and Vector.
