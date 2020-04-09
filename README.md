@@ -8,7 +8,7 @@
 ## Methods
 ### istraversable
 Takes two vertices, an array of edges and the array's length.
-Will return a boolean representing the possible of traversing the edges such that Vertices v1 and v2 will meet.
+Will return a boolean representing the possibility of traversing the edges such that Vertices v1 and v2 will meet.
 
 ### degree
 Takes a vertex, an array of edges and the array's length.
