@@ -15,6 +15,7 @@ public:
     vector<Edge> edges;
     
     Graph(vector<Vertex> _vertices, vector<Edge> _edges);
+    Graph();
     
     int degree(Vertex& v);
     

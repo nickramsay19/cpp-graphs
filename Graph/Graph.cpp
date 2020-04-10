@@ -9,6 +9,11 @@ Graph::Graph(vector<Vertex> _vertices, vector<Edge> _edges){
     edges = _edges;
 }
 
+Graph::Graph(){
+    vertices = vector<Vertex>();
+    edges = vector<Edge>();
+}
+
 int Graph::degree(Vertex& v){
     
     long edges_length = edges.size();
@@ -34,6 +39,7 @@ bool Graph::istraversable(Vertex v1, Vertex v2){
     
     // create edges vector of 1 less for subgraph
     vector<Edge> other_edges;
+    Graph subgraph;
     
     // find all vertices connected to v1
     for(int i = 0; i < edges_length; i++){
