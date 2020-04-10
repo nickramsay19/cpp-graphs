@@ -63,6 +63,7 @@ int main(int argc, const char * argv[]) {
     vertices.push_back(Vertex("v1"));
     vertices.push_back(Vertex("v2"));
     vertices.push_back(Vertex("v3"));
+    vertices.push_back(Vertex("v4"));
     
     // create edges vector
     vector<Edge> edges;
@@ -85,6 +86,11 @@ int main(int argc, const char * argv[]) {
     // find path length of v0 -> v3
     int _v0_to_v3 = graph.traverse(vertices[0], vertices[3]);
     cout << "v0 -> v3 path length : " << _v0_to_v3 << endl;
+    
+    // find path length of v0 -> v3
+    int _v0_to_v4 = graph.traverse(vertices[0], vertices[4]);
+    cout << "v0 -> v4 path length : " << _v0_to_v4 << endl;
+    
     
     // program success
     return 0;
