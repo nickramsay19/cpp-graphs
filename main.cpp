@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "Graph/Graph.hpp"
 #include "Graph/Vertex/Vertex.hpp"
@@ -56,31 +57,33 @@ bool istraversable(Vertex v1, Vertex v2, Edge* edges, int edges_length){
 
 int main(int argc, const char * argv[]) {
 
-    Vertex vertices[] = {
-        Vertex("v0"),
-        Vertex("v1"),
-        Vertex("v2"),
-        Vertex("v3")
-    };
+    cout << "begiining" << endl;
     
-    Edge edges[] = {
-        Edge(Vertex("v0"), Vertex("v1")),
-        Edge(Vertex("v1"), Vertex("v0")),
-        Edge(Vertex("v2"), Vertex("v3"))
-    };
+    // create vertices vector
+    vector<Vertex> vertices;
+    vertices.push_back(Vertex("v0"));
+    vertices.push_back(Vertex("v1"));
+    vertices.push_back(Vertex("v2"));
+    vertices.push_back(Vertex("v3"));
     
-    int vertices_length = sizeof(vertices) / sizeof(Vertex(""));
-    int edges_length = sizeof(edges) / sizeof(Edge(Vertex(""), Vertex("")));
+    // create edges vector
+    vector<Edge> edges;
+    edges.push_back(Edge(vertices[0], vertices[1]));
+    edges.push_back(Edge(vertices[1], vertices[2]));
+    edges.push_back(Edge(vertices[2], vertices[2]));
+    edges.push_back(Edge(vertices[0], vertices[2]));
     
-    Graph graph(vertices, edges, vertices_length, edges_length);
+    // create a graph
+    Graph graph(vertices, edges);
     
-    
-    bool is_traversable = istraversable(Vertex("v0"), Vertex("v3"), edges, edges_length);
+    // out degree of v0
     int degree_v0 = graph.degree(vertices[0]);
-    
-    
     cout << "deg(v0) : " << degree_v0 << endl;
+    
+    // find traversability of v0 -> v3
+    bool is_traversable = graph.istraversable(vertices[0], vertices[3]);
     cout << "v0 -> v3 : " << (is_traversable ? "Yes" : "No") << endl;
     
+    // program success
     return 0;
 }
