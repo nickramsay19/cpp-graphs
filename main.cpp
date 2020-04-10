@@ -57,8 +57,6 @@ bool istraversable(Vertex v1, Vertex v2, Edge* edges, int edges_length){
 
 int main(int argc, const char * argv[]) {
 
-    cout << "begiining" << endl;
-    
     // create vertices vector
     vector<Vertex> vertices;
     vertices.push_back(Vertex("v0"));
@@ -70,7 +68,7 @@ int main(int argc, const char * argv[]) {
     vector<Edge> edges;
     edges.push_back(Edge(vertices[0], vertices[1]));
     edges.push_back(Edge(vertices[1], vertices[2]));
-    edges.push_back(Edge(vertices[2], vertices[2]));
+    edges.push_back(Edge(vertices[2], vertices[3]));
     edges.push_back(Edge(vertices[0], vertices[2]));
     
     // create a graph
@@ -82,7 +80,7 @@ int main(int argc, const char * argv[]) {
     
     // find traversability of v0 -> v3
     bool is_traversable = graph.istraversable(vertices[0], vertices[3]);
-    cout << "v0 -> v3 : " << (is_traversable ? "Yes" : "No") << endl;
+    cout << "v0 -> v3 : " << graph.traverse(vertices[0], vertices[3]) << endl;
     
     // program success
     return 0;

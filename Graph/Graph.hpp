@@ -20,6 +20,8 @@ public:
     int degree(Vertex& v);
     
     bool istraversable(Vertex v1, Vertex v2);
+    
+    int traverse(Vertex v1, Vertex v2);
 };
 
 #endif /* Graph_hpp */
