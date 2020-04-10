@@ -7,13 +7,14 @@
 
 ## Methods
 ### istraversable
-Takes two vertices, an array of edges and the array's length.
-Will return a boolean representing the possibility of traversing the edges such that Vertices v1 and v2 will meet.
+Takes two vertices and returns a boolean representing the possibility of traversing the edges such that Vertices v1 and v2 will meet.
+
+### traverse
+Takes to vertices and outputs the total amount of edges needed to cross in order for the vertices to meet.
 
 ### degree
-Takes a vertex, an array of edges and the array's length.
-Will return the degree of the vertex, that being the total amount of edges connected to it.
+Takes a vertex and outputs the degree of the given vertex, that being the total amount of edges adjacent to the vertex.
 
 ## Todo
-- Create a traversability method that returns the lowest amount of edges crossed such that vertex v1 can meet vertex v2. If a path is not found, the method shall return -1.
-- Add operator overloading for istraversable and degree for vector parameters of type Vector& and Vector.
+- Ensure that traverse outputs the minimum path
+	- Compare both paths and output the shortest
