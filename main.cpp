@@ -80,7 +80,11 @@ int main(int argc, const char * argv[]) {
     
     // find traversability of v0 -> v3
     bool is_traversable = graph.istraversable(vertices[0], vertices[3]);
-    cout << "v0 -> v3 : " << graph.traverse(vertices[0], vertices[3]) << endl;
+    cout << "v0 -> v3 : " << (is_traversable ? "Yes" : "No") << endl;
+    
+    // find path length of v0 -> v3
+    int _v0_to_v3 = graph.traverse(vertices[0], vertices[3]);
+    cout << "v0 -> v3 path length : " << _v0_to_v3 << endl;
     
     // program success
     return 0;
