@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 
-#include "Vertex/Vertex.hpp"
-#include "Edge/Edge.hpp"
+#include "Graph/Graph.hpp"
+#include "Graph/Vertex/Vertex.hpp"
+#include "Graph/Edge/Edge.hpp"
 
 using namespace std;
 
@@ -52,17 +53,6 @@ bool istraversable(Vertex v1, Vertex v2, Edge* edges, int edges_length){
     return false;
 }
 
-int degree(Vertex& v, Edge* edges, int edges_length){
-    
-    int total_degree = 0;
-    
-    for(int i = 0; i < edges_length; i++){
-        if(edges[i].v1 == v) total_degree++;
-        if(edges[i].v2 == v) total_degree++;
-    }
-    
-    return total_degree;
-}
 
 int main(int argc, const char * argv[]) {
 
@@ -75,14 +65,18 @@ int main(int argc, const char * argv[]) {
     
     Edge edges[] = {
         Edge(Vertex("v0"), Vertex("v1")),
-        Edge(Vertex("v1"), Vertex("v2")),
+        Edge(Vertex("v1"), Vertex("v0")),
         Edge(Vertex("v2"), Vertex("v3"))
     };
     
+    int vertices_length = sizeof(vertices) / sizeof(Vertex(""));
     int edges_length = sizeof(edges) / sizeof(Edge(Vertex(""), Vertex("")));
     
+    Graph graph(vertices, edges, vertices_length, edges_length);
+    
+    
     bool is_traversable = istraversable(Vertex("v0"), Vertex("v3"), edges, edges_length);
-    int degree_v0 = degree(vertices[0], edges, edges_length);
+    int degree_v0 = graph.degree(vertices[0]);
     
     
     cout << "deg(v0) : " << degree_v0 << endl;
